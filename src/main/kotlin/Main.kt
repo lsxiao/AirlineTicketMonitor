@@ -1,5 +1,5 @@
-import org.openqa.selenium.By
-import utils.toNumber
+import model.OneWayAirline
+import util.fetchTickets
 
 /**
  * author:lsxiao
@@ -8,15 +8,13 @@ import utils.toNumber
  */
 fun main(args: Array<String>) {
 
-    val url = AirlineUrl("2019-01-31", "2019-02-10").toString()
-    println(url)
-    utils.open(url)
+    val fromCity = "bjs" // 北京
+    val toCity = "ckg" // 重庆
 
-    DriverManager.driver.findElements(By.className("search_table_header")).forEach {
-        val rawPrice = it.findElement(By.className("base_price02")).text
-        val price = rawPrice.toNumber()
-        println(price)
-    }
+    val oneWayAirline = OneWayAirline(currentCity = fromCity, destinationCity = toCity, dateToGo = "2019-02-1")
 
-    DriverManager.driver.close()
+    println(oneWayAirline.getUrl())
+
+    fetchTickets(oneWayAirline)
+
 }

@@ -13,7 +13,6 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
-    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.12.0'
 }
 
 compileKotlin {
