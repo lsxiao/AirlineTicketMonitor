@@ -6,9 +6,9 @@ package model
  * email:faith.epiphone@gmail.com
  */
 class OneWayAirline(
-    private val dateToGo: String,
-    private val currentCity: String = "bjs",
-    private val destinationCity: String = "ckg"
+    val dateToGo: String,
+    val currentCity: String = "bjs",
+    val destinationCity: String = "ckg"
 ) {
 
     fun getUrl(): String = "http://flights.ctrip.com/itinerary/oneway/$currentCity-$destinationCity?date=$dateToGo"

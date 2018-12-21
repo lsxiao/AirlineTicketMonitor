@@ -23,5 +23,4 @@ fun ChromeDriver.screenshotAndSave() {
 fun ChromeDriver.with(url: String, callback: (ChromeDriver) -> Unit) {
     this.get(url)
     callback(this)
-    this.close()
 }
